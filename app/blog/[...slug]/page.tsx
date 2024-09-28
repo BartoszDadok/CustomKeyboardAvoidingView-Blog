@@ -12,7 +12,7 @@ interface PostPageProps {
   params: {
     slug: string[];
   };
-  current?: boolean;
+  current: boolean;
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
@@ -61,7 +61,7 @@ export async function generateStaticParams(): Promise<
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
 
-export default async function PostPage({ params, current }: any) {
+export default async function PostPage({ params, current }: PostPageProps) {
   const post = await getPostFromParams(params);
 
   if (!post || !post.published) {
