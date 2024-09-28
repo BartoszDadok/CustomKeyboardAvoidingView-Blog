@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { Tag } from "@/components/tag";
 import Comments from "@/components/ui/comments";
-import { badgeVariants } from "@/components/ui/badge";
+
 interface PostPageProps {
   params: {
     slug: string[];
@@ -61,7 +61,7 @@ export async function generateStaticParams(): Promise<
   return posts.map((post) => ({ slug: post.slugAsParams.split("/") }));
 }
 
-export default async function PostPage({ params, current }: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const post = await getPostFromParams(params);
 
   if (!post || !post.published) {
@@ -82,14 +82,7 @@ export default async function PostPage({ params, current }: PostPageProps) {
         </p>
       ) : null}
       <div className="flex gap-2 mt-2">
-        <p
-          className={badgeVariants({
-            variant: current ? "default" : "secondary",
-            className: "no-underline rounded-md my-0",
-          })}
-        >
-          Author: Bartosz Dadok
-        </p>
+        <p className={"no-underline rounded-md my-0"}>Author: Bartosz Dadok</p>
       </div>
       <hr className="my-4" />
       <MDXContent code={post.body} />
