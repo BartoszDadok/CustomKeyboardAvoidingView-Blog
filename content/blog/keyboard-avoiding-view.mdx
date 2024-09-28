@@ -7,23 +7,17 @@ published: true
 author: Bartosz Dadok
 ---
 
-{/* <Callout type="warning">The final effect on Android and IOS: </Callout> */}
-
-{/* ![CustomKeyboardAvoidngView-Android](http://localhost:3000/CustomKeyboardAvoidingViewAndroid.gif)
-![CustomKeyboardAvoidngView-IOS](http://localhost:3000/CustomKeyboardAvoidingViewIOS.gif)
-![KeyboardAvoidngView-Android](http://localhost:3000/KeyboardAvoidingViewAndroid.gif)
-![KeyboardAvoidngView-IOS](http://localhost:3000/KeyboardAvoidingViewIOS.gif) */}
 
 **The goal of this article is to accomplish consistent keyboard behavior when the user focuses the input. This is a final effect.**
 
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -44,11 +38,11 @@ If you have ever tried to implement **KeyboardAvoidingView** in React Native you
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
+  <img width={300} src="/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
+  <img width={300} src="/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -84,11 +78,11 @@ But apart from that, we can set it to a different value.
 The ``windowSoftInputMode`` attributes:
 
 - **adjustResize**: The view gets smaller to make room for the keyboard.
-<img width={300} src="http://localhost:3000/adjustResize.gif" alt="KeyboardAvoidingView-adjustResize" />
+<img width={300} src="/adjustResize.gif" alt="KeyboardAvoidingView-adjustResize" />
 - **adjustPan**: The view moves up when the keyboard shows up.
-<img width={300} src="http://localhost:3000/adjustPan.gif" alt="KeyboardAvoidingView-adjustPan" />
+<img width={300} src="/adjustPan.gif" alt="KeyboardAvoidingView-adjustPan" />
 - **adjustNothing**:  The window remains unchanged, without resizing or shifting. Nothing happen with the view. We cannot even see the input, the view stays where it was.
-<img width={300} src="http://localhost:3000/adjustNothing.gif" alt="KeyboardAvoidingView-adjustNothing" />
+<img width={300} src="/adjustNothing.gif" alt="KeyboardAvoidingView-adjustNothing" />
 - **adjustUnspecified**:  The system decides whether to resize or move the window when the keyboard pops up. No GIF attached because you never know which value will be there.
 
 
@@ -111,11 +105,11 @@ Let's see the difference between Android and IOS:
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/plainInputAndroid.gif" alt="tex-input-android" />
+  <img width={300} src="/plainInputAndroid.gif" alt="tex-input-android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/plainInputIOS.gif" alt="text-inpput-ios" />
+  <img width={300} src="/plainInputIOS.gif" alt="text-inpput-ios" />
 </div>
 </div>
 
@@ -139,11 +133,11 @@ As shown at the beginning the effect of this code is:
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
+  <img width={300} src="/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
+  <img width={300} src="/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -316,11 +310,11 @@ The preivew of this code:
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-without-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-without-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-without-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-without-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -436,11 +430,11 @@ export { CustomKeyboardAvoidingView };
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -458,11 +452,11 @@ The whole app code, which you can see in the GIFs, is available here.
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-without-bottom-tab.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-without-bottom-tab.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-without-bottom-tab.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-without-bottom-tab.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -472,11 +466,11 @@ The whole app code, which you can see in the GIFs, is available here.
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-screen-inputs-middle.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-screen-inputs-middle.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-screen-inputs-middle.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-screen-inputs-middle.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
@@ -485,11 +479,11 @@ The whole app code, which you can see in the GIFs, is available here.
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="http://localhost:3000/Android-Custom-Keyboard-Avoiding-View-button-bottom.gif" alt="CustomKeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-button-bottom.gif" alt="CustomKeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="http://localhost:3000/IOS-Custom-Keyboard-Avoiding-View-button-bottom.gif" alt="CustomKeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-button-bottom.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
 </div>
 
