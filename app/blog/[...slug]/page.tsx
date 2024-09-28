@@ -12,7 +12,6 @@ interface PostPageProps {
   params: {
     slug: string[];
   };
-  current: boolean;
 }
 
 async function getPostFromParams(params: PostPageProps["params"]) {
