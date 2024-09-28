@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { Tag } from "@/components/tag";
 import Comments from "@/components/ui/comments";
 
+import { AuthorTag } from "@/components/ui/authorTag";
 interface PostPageProps {
   params: {
     slug: string[];
@@ -81,7 +82,7 @@ export default async function PostPage({ params }: PostPageProps) {
         </p>
       ) : null}
       <div className="flex gap-2 mt-2">
-        <p className={"no-underline rounded-md my-0"}>Author: Bartosz Dadok</p>
+        <AuthorTag />
       </div>
       <hr className="my-4" />
       <MDXContent code={post.body} />
