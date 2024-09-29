@@ -58,7 +58,13 @@
     --chart-5: 340 75% 55%;
   }
 }
-
+code {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  padding: 0.2em 0.4em;
+  border-radius: var(--radius);
+  font-family: 'Courier New', Courier, monospace;
+}
 @layer base {
   * {
     @apply border-border;
