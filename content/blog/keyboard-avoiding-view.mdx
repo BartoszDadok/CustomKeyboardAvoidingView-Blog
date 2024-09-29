@@ -8,9 +8,22 @@ author: Bartosz Dadok
 ---
 
 
-**The goal of this article is to accomplish consistent keyboard behavior when the user focuses the input. This is a final effect.**
+**The goal of this article is to accomplish consistent keyboard behavior when the user focuses on the input. In the video below, you can see the best you can have with ``KeyboardAvoidingView`` provided by React Native on the left side. And the effect after implementing ``CustomKeyboardAvoidingView`` - rigth side on the video.** 
 
-<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
+<div className="relative" style={{ padding: '56.25% 0 0 0' }}>
+  <video 
+    src="/Final effect- CustomKeyboardAvoidingView.mp4" 
+    controls 
+    className="absolute top-0 left-0 w-full h-full rounded-lg"
+    style={{marginTop: 0}}
+    title="Final effect- KeyboardAvoidingView">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+**The article explains differences between keyboard behaviors on Android and IOS and implementing ``CustomKeyboardAvoidingView`` which gives much better user experience while opening the keyboard.**
+
+{/* <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
   <img width={300} src="/Android-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-Android" />
@@ -19,9 +32,11 @@ author: Bartosz Dadok
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
   <img width={300} src="/IOS-Custom-Keyboard-Avoiding-View-with-padding.gif" alt="CustomKeyboardAvoidingView-IOS" />
 </div>
-</div>
+</div> */}
 
-If you have ever tried to implement **KeyboardAvoidingView** in React Native you could see the difference between IOS and Android. The most common approach is to implement **KeyboardAvoidingView** this way:
+## If you like the behavior on the right side more than on the left, this article is for you!
+
+If you have ever tried to implement ``KeyboardAvoidingView`` in React Native you could see the difference between IOS and Android. The most common approach is to implement ``KeyboardAvoidingView`` this way:
 
 ```tsx
    <KeyboardAvoidingView 
@@ -31,26 +46,31 @@ If you have ever tried to implement **KeyboardAvoidingView** in React Native you
     {children}
    </KeyboardAvoidingView>
 ```
+That code uses majority of mobile apps written in React Native. There is nothing wrong with that code, but we can have much better user experience using different approach to keyboard avoding view.
 
 
-**The effect of this code is:**
+**The effect of the above code is as you could see on the video on the left side. Let's see that again:**
 
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-KeyboardAvoidingView.gif" alt="KeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-KeyboardAvoidingView.gif" alt="KeyboardAvoidingView-IOS" />
 </div>
 </div>
 
-As you can see, on Android, the content jumps up while opening the keyboard, but on IOS, the behavior is smooth and friendly. In this article, I want to share the ways to have the same behavior on IOS and Android and also to have complete control over the keyboard and view.
+As you can see, on Android, the content jumps up while opening the keyboard, but on IOS, the behavior is smooth and friendly. 
+
+After reading this article, you will accomplish the same behavior on iOS and Android and have complete control over the keyboard and view.
 
 Since IOS is working correctly, let's focus first on Android.
 
-Android API allowed us to decide how a layout should behave when we focus the input and the keyboard is showing. We can control that using the attribute ``windowSoftInputMode``. The attribute is located in ``AndroidManifest.xml``.
+## Android API and keyboard modes
+
+``Android API`` allowed us to decide how a layout should behave when we focus the input and the keyboard is showing. We can control that using the attribute ``windowSoftInputMode``. The attribute is located in ``AndroidManifest.xml``.
 
 ```xml
 <activity
@@ -88,9 +108,9 @@ The ``windowSoftInputMode`` attributes:
 
 ## Android and IOS differences
 
-First, let's start with the plain ``TextInput`` provided by ReactNative; let's forget for a while about ``KeyboardAvoidingView``. 
+First, let's start with the plain ``TextInput`` provided by React Native; as you can see we don’t use the ``KeyboardAvoidingView`` component here.
 
-We have freshly installed ReactNative or Expo project (by default ``windowSoftInputMode`` is ``adjustResize``) and ``View``, which contains only a ``TextInput``.
+We have freshly installed ReactNative or Expo project (by default, on Android, ``windowSoftInputMode`` is ``adjustResize``) and ``View``, which contains only a ``TextInput``.
 
 We have this screen:
 
@@ -133,15 +153,15 @@ As shown at the beginning the effect of this code is:
 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '20px', flexWrap: "wrap", justifyContent: "center" }}>
 <div>
     <h3 style={{textAlign: "center", marginTop: 5}}>Android</h3>
-  <img width={300} src="/KeyboardAvoidingViewAndroid.gif" alt="KeyboardAvoidingView-Android" />
+  <img width={300} src="/Android-KeyboardAvoidingView.gif" alt="KeyboardAvoidingView-Android" />
  </div> 
  <div>
   <h3 style={{textAlign: "center", marginTop: 5}}>IOS</h3>
-  <img width={300} src="/KeyboardAvoidingViewIOS.gif" alt="KeyboardAvoidingView-IOS" />
+  <img width={300} src="/IOS-KeyboardAvoidingView.gif" alt="KeyboardAvoidingView-IOS" />
 </div>
 </div>
 
-For Android, the behavior property is set to undefined, which means do nothing; it behaves like there is no ``KeyboardAvoidingView`` component.
+For Android, the behavior property is set to ``undefined``, which means do nothing; it behaves like there is no ``KeyboardAvoidingView`` component.
 
 As I mentioned at the beginning, having that is the best that you can have when using ``KeyboardAvoidingView``, which React Native provides. 
 
