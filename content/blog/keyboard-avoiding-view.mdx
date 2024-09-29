@@ -40,7 +40,7 @@ If you have ever tried to implement ``KeyboardAvoidingView`` in React Native you
 
 ```tsx
    <KeyboardAvoidingView 
-    behavior={Platform.OS === 'ios' ? 'padding' : 'undefined'}
+    behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     keyboardVerticalOffset={60}
     style={styles.container}>
     {children}
@@ -141,7 +141,7 @@ That is a big difference and the reason why this implementation is the most comm
 
 ```tsx
    <KeyboardAvoidingView 
-    behavior={Platform.OS === 'ios' ? 'padding' : 'undefined'}
+    behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     keyboardVerticalOffset={60}
     style={styles.container}>
     {children}
